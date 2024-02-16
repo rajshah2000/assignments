@@ -1,0 +1,3 @@
+D:\Full Stack Developer\C++\module 3\classwork\length_string.cpp	In function 'int main()':
+18	20	D:\Full Stack Developer\C++\module 3\classwork\length_string.cpp	[Error] 'strcmp' was not declared in this scope
+19	13	D:\Full Stack Developer\C++\module 3\classwork\length_string.cpp	[Warning] unknown escape sequence: '\040'
