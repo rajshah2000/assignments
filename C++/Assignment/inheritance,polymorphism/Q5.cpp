@@ -5,64 +5,49 @@
     class result conatins the total marks obtained in the test. The class result can inherit the details of the marks obtained in the test and roll number of students(Multilevel Inheritance)
 */
 
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-class student{
-	
-    protected:
-    	
-        int rollno;
-        
-    public:
-        void get_student(){
-            cout<<"Enter Student Roll No : ";
-            cin>>rollno;
-        }
-};
-
-class test : public student{
-	
+class Student{
 	protected:
-		
-		float maths,sci,total=0;
-		
+		int rollno;
 	public:
-		void get_marks(){
-			cout<<"Enter Maths Marks : ";
-			cin>>maths;
-			cout<<"Enter Science Marks : ";
-			cin>>sci;
-			
-			total = maths + sci;
-			
-			cout<<"Student Roll No is : "<<rollno<<".\tTotal Marks is : "<<total;
+		void get_student_detail(){
+			cout<<"\nenter Roll No. :";
+			cin>>rollno;
 		}
-    
 };
-
-class result: public test{
+class Test:public Student{
+	protected:
+		float sub1;
+		float sub2;
+		float total=0;
+	public:
+		void get_test_detail(){
+			cout<<"\nenter Subject 1 Marks :";
+			cin>>sub1;
+			cout<<"\nenter Subject 2 Marks :";
+			cin>>sub2;
+			
+			total=sub1+sub2;
+			
+			cout<<"Student Roll No. is:"<<rollno<<"\nTotal Marks is:"<<total;
+		}
+};
+class Result:public Test{
+	protected:
+		float total;
+		float sub1=0;
+		float sub2=0;
+	public:
+		void print_result_detail(){
+			cout<<"\nStudent Roll No. is:"<<rollno<<"\nTotal Marks is:"<<total;
+		}
+};
+int main(){
 	
-    protected:
-    	
-    	float total,maths=0,sci=0;
-    	
-    public:
-    
-    	void print_data() {
-//    		cout<<"Student Roll No is : "<<rollno<<".\tTotal Marks is : "<<total;
-		}
-    	
-};
-
-int main() {
-    
-    result a;
-    
-	a.get_student();
-	a.get_marks();
-	a.print_data();
-
-
-    return 0;
+	Result r1;
+	
+	r1.get_student_detail();
+	r1.get_test_detail();
+	r1.print_result_detail();
 }

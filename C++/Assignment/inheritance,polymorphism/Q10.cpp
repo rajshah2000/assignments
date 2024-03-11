@@ -1,38 +1,28 @@
 /*
 10.Write a program to concatenate the two strings using Operator Overloading.
 */
-
 #include<iostream>
 #include<string.h>
-
 using namespace std;
-
-class AddString {
-
+class ConcateString{
 	public:
-	
-		char s1[50],s2[50];
-	
-		AddString(char s1[], char s2[]) {
-			strcpy(this->s1,s1);
-			strcpy(this->s2,s2);
+		char s1[25];
+		char s2[25];
+		
+		ConcateString(char str1[],char str2[]){
+			strcpy(s1,str1);
+			strcpy(s2,str2);
 		}
-	
-		void operator+() {
-		    
-			cout<<"\nNew Sentence : "<<strcat(s1,s2);
+		void operator+(){
+			cout<<"\nConcatenation :"<<strcat(s1,s2);
 		}
 };
-
-int main() {
-    
-    char s1[] = "Hello,";
-	char s2[] = " Nice to meet you";
-
-	AddString a(s1, s2);
-
-	+a;
+int main(){
 	
-	return 0;
+	char str1[] = "Hello";
+	char str2[] = "World";
 	
+	ConcateString a1(str1,str2);
+	
+	+a1;
 }

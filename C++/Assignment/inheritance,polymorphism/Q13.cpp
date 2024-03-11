@@ -3,44 +3,31 @@
 using friend function.
 */
 
+
 #include<iostream>
-
 using namespace std;
-
-class Max{
-    
+class Test{
 	private:
-	
-		int a,b;
-		
+		int x, y;
 	public:
-	
-		void get_data(){
-			cout<<"\nEnter First Number : ";
-			cin>>a;
-			cout<<"Enter Second Number : ";
-			cin>>b;
+		void input(){
+			cout<<"\n Enter Two numbers:";
+			cin>>x>>y;
 		}
 		
-		friend void find(Max t);
+		friend void find(Test t);
 };
 
-void find(Max t){
-    
-	if(t.a > t.b){
-		cout<<"\nLargest Number is : "<<t.a;
+void find(Test t){
+	if(t.x > t.y){
+		cout<<"\nMax is:"<<t.x;
 	}else{
-		cout<<"\nLargest Number is : "<<t.b;
+		cout<<"\nMax is:"<<t.y;
 	}
 }
 
 int main(){
-    
-	Max t;
-	
-	t.get_data();
+	Test t;
+	t.input();
 	find(t);
-	
-	return 0;
-	
 }

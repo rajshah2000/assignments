@@ -4,41 +4,31 @@
 */
 
 #include<iostream>
-
 using namespace std;
-
-class S{
-    
-    protected:
-    
-	    int t,a,b;
-	
+class Swap{
+	int temp,a,b;
 	public:
-	
-		S(int a,int b){
-			this -> a = a;
-			this -> b = b;
+		Swap(int a,int b){
+			this -> a =a;
+			this -> b=b;
 		}
 		
-		friend void swap(S&);
+		friend void swap(Swap&);
 };
 
-void swap(S& s1){
-    
-	s1.t = s1.a;
+void swap(Swap& s1){
+	cout<<"\nBefore Swapping:"<<s1.a<<"	"<<s1.b;
+	
+	s1.temp = s1.a;
 	s1.a = s1.b;
-	s1.b = s1.t;
+	s1.b = s1.temp;
 	
-	cout<<"\nAfter Swap : "<<s1.a<<"\t\t"<<s1.b;
-	
+	cout<<"\nAfter Swapping:"<<s1.a<<"	"<<s1.b;
 }
 
 int main(){
-    
-	S c(20,40);
-	
-	swap(c);
-	
-	return 0;
-	
+	Swap s(15, 30);
+	swap(s);
 }
+
+

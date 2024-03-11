@@ -6,61 +6,51 @@
 
 #include<iostream>
 using namespace std;
-
-class cricketer{
-
+class Cricketer{
 	protected:
-	
-		int i;
-		float run[5];
-		char name[50];
-		
+		string playerName;
+		int age;
 	public:
-		void get() {
-			cout<<"Enter Your Name : ";
-			cin>>name;
-			for(i=1;i<=5;i++){
-				cout<<"Enter Runs : ";
-				cin>>run[i];
-			}
+		void get_detail(){
+			cout<<"Enter Player Name :";
+			cin>>playerName;
+			cout<<"Enter Player Age :";
+			cin>>age;
 		}
 };
-
-class batsman:public cricketer{
-    
-	private:  
-	
-		float avg_run=0,total_run=0,best_per=0;
-		
+class Batsman:public Cricketer{
+	private:
+		int totalRuns;
+		double averageRuns;
+		int bestPerformance;
 	public:
-	
-		void get_data() {
-			for(i=0;i<6;i++){
-				total_run += run[i];
+		void get_Batsman(){
+			get_detail();
+			cout<<"Enter total Runs :";
+			cin>>totalRuns;
+			cout<<"Enter Best Performance :";
+			cin>>bestPerformance;
+		}
+		void calculate_AverageRuns(){
+			if(bestPerformance != 0){
+				averageRuns=totalRuns/bestPerformance;
+			}else{
+				averageRuns = 0.0;
 			}
+		}
+		void display_Data(){
+			cout<<"\nPlayer Name:"<<playerName;
+			cout<<"\nPlayer Age:"<<age;
+			cout<<"\nTotal Runs:"<<totalRuns;
+			cout<<"\nAverage Runs:"<<averageRuns;
+			cout<<"\nBest Performance:"<<bestPerformance;
 			
-			cout<<"\nTotal 5 Match Run is : "<<total_run;
-			
-			avg_run = total_run/5;
-			
-			cout<<"\nAverage Run of 5 Match is : "<<avg_run;
-			
-			for(i=0;i<=5;i++){
-				// best_per = run[i];
-				run[i] > best_per;
-				best_per = run[i];
-			}
-			cout<<"\nBest Performace is : "<<best_per;		
 		}
 };
-
-int main () {
+int main(){
 	
-	batsman a;
-	
-	a.get();
-	a.get_data();
-	
-	return 0;
-	
+	Batsman batsman;
+	batsman.get_Batsman();
+	batsman.calculate_AverageRuns();
+	batsman.display_Data();
 }
