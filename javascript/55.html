@@ -1,0 +1,54 @@
+<!-- Q.55 Form in Email, number, Password, Validation? -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to validate the form
+function validateForm() {
+  // Get values from form fields
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Check if name is empty
+  if (name === '') {
+    alert('Name must not be empty');
+    return false;
+  }
+
+  // Check if email is empty
+  if (email === '') {
+    alert('Email must not be empty');
+    return false;
+  }
+
+  // Check if password is empty
+  if (password === '') {
+    alert('Password must not be empty');
+    return false;
+  }
+
+  // Check if email is valid using a regular expression
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Email is not valid');
+    return false;
+  }
+
+  // Check if password is at least 8 characters long
+  if (password.length < 8) {
+    alert('Password must be at least 8 characters long');
+    return false;
+  }
+
+  // If all validations pass, submit the form
+  return true;
+}
+    </script>
+</body>
+</html>
