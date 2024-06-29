@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Navbar{
+    display: block;
+
+}
+.mainpic {
+    
+    margin: 0 auto;
+}
+.mainpic img{
+    width: 100%;
+}
+.pictures {
+    width: 25%;
+    display: inline-block;
+    margin: 0 45px;
+}
+.third{
+    color: black;
+}
+.but button{
+    margin:0 50px;
+}
+
+.api{
+    display: inline-block;
+}
+.milk{
+    display: flex;
+    justify-content: space-between;
+}
+.fruits{
+    display: flex;
+    justify-content: space-between;
+}
